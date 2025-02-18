@@ -5,7 +5,15 @@ public class Palindrome {
 
     }
 
-    public boolean isPalindrome(String input) {
+    public static boolean isPalindrome(String input) {
+        String strOnly = input.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+        String strOnlyReverse = new StringBuilder(strOnly).reverse().toString();
+
+        return strOnly.equals(strOnlyReverse);
+    }
+
+    /** Answer */
+    public static boolean isPalindromeAnswer(String input) {
         int start = 0;
         int end = input.length() -1;
 
