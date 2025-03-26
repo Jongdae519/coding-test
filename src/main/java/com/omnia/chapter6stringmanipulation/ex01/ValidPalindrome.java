@@ -1,9 +1,6 @@
 package com.omnia.chapter6stringmanipulation.ex01;
 
-public class Palindrome {
-    public static void main(String[] args) {
-
-    }
+public class ValidPalindrome {
 
     public static boolean isPalindrome(String input) {
         String strOnly = input.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
@@ -12,10 +9,12 @@ public class Palindrome {
         return strOnly.equals(strOnlyReverse);
     }
 
-    /** Answer */
+    /**
+     * Answer
+     */
     public static boolean isPalindromeAnswer(String input) {
         int start = 0;
-        int end = input.length() -1;
+        int end = input.length() - 1;
 
         while (start < end) {
             if (!Character.isLetterOrDigit(input.charAt(start))) {
@@ -23,7 +22,7 @@ public class Palindrome {
             } else if (!Character.isLetterOrDigit(input.charAt(end))) {
                 end--;
             } else {
-                if (Character.toLowerCase(input.charAt(start)) == Character.toLowerCase(input.charAt(end))) {
+                if (Character.toLowerCase(input.charAt(start)) != Character.toLowerCase(input.charAt(end))) {
                     return false;
                 }
                 start++;
