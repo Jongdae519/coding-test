@@ -14,9 +14,11 @@ class ValidPalindromeTest {
     void test() {
         Instant startTime = Instant.now();
 
-        Assertions.assertEquals(ValidPalindrome.isPalindrome(INPUT), true);
+        boolean result = ValidPalindrome.isPalindrome(INPUT);
 
         Instant endTime = Instant.now();
+
+        Assertions.assertEquals(result, true);
 
         System.out.println("ValidPalindromeTest#test: " + Duration.between(startTime, endTime).toNanos() + " ns");
     }
@@ -25,9 +27,11 @@ class ValidPalindromeTest {
     void testAnswer() {
         Instant startTime = Instant.now();
 
-        Assertions.assertEquals(ValidPalindrome.isPalindromeAnswer(INPUT), true);
+        boolean result = ValidPalindrome.isPalindromeAnswer(INPUT);
 
         Instant endTime = Instant.now();
+
+        Assertions.assertEquals(result, true);
 
         System.out.println("ValidPalindromeTest#testAnswer: " + Duration.between(startTime, endTime).toNanos() + " ns");
 

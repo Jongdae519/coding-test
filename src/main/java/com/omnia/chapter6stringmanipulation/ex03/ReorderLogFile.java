@@ -69,6 +69,23 @@ public class ReorderLogFile {
         return logFileList.stream().map(LogFile::toString).toArray(String[]::new);
     }
 
+    public static List<String> reorderLogFileUsingList(List<String> logs) {
+        List<LogFile> logFileList = logs.stream().map(log -> {
+            String[] parts = log.split(" ", 2);
+            String id = parts[0];
+            String contents = parts[1];
+
+            if (Character.isDigit(contents.charAt(0))) {
+                return new Digit(id, contents);
+            }
+            return new Letter(id, contents);
+        }).collect(Collectors.toList());
+
+        Collections.sort(logFileList);
+
+        return logFileList.stream().map(LogFile::toString).toList();
+    }
+
     /**
      * Answer
      */

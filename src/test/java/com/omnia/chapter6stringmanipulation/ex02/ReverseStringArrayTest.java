@@ -17,10 +17,11 @@ class ReverseStringArrayTest {
         Instant startTime = Instant.now();
 
         String[] reversed = ReverseStringArray.reverseStringArray(INPUT);
-        System.out.println(reversed.toString());
-        Assertions.assertTrue(Arrays.equals(reversed, INPUT));
 
         Instant endTime = Instant.now();
+
+        System.out.println(reversed.toString());
+        Assertions.assertTrue(Arrays.equals(reversed, INPUT));
 
         System.out.println("ReverseStringArrayTest#test: " + Duration.between(startTime, endTime).toNanos() + " ns");
     }
@@ -30,10 +31,11 @@ class ReverseStringArrayTest {
         Instant startTime = Instant.now();
 
         String[] reversed = ReverseStringArray.reverseStringArrayAnswer(INPUT);
-        System.out.println(reversed.toString());
-        Assertions.assertTrue(Arrays.equals(reversed, INPUT));
 
         Instant endTime = Instant.now();
+
+        System.out.println(reversed.toString());
+        Assertions.assertTrue(Arrays.equals(reversed, INPUT));
 
         System.out.println("ReverseStringArrayTest#testAnswer: " + Duration.between(startTime, endTime).toNanos() + " ns");
     }
