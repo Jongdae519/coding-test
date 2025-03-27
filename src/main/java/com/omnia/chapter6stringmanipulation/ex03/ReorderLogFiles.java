@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ReorderLogFile {
+public class ReorderLogFiles {
 
     sealed interface LogFile extends Comparable<LogFile> permits Letter, Digit {
         String id();
@@ -52,7 +52,7 @@ public class ReorderLogFile {
         }
     }
 
-    public static String[] reorderLogFile(String[] logs) {
+    public static String[] reorderLogFiles(String[] logs) {
         List<LogFile> logFileList = Arrays.stream(logs).map(log -> {
             String[] parts = log.split(" ", 2);
             String id = parts[0];
@@ -69,7 +69,7 @@ public class ReorderLogFile {
         return logFileList.stream().map(LogFile::toString).toArray(String[]::new);
     }
 
-    public static List<String> reorderLogFileUsingList(List<String> logs) {
+    public static List<String> reorderLogFilesUsingList(List<String> logs) {
         List<LogFile> logFileList = logs.stream().map(log -> {
             String[] parts = log.split(" ", 2);
             String id = parts[0];
@@ -89,7 +89,7 @@ public class ReorderLogFile {
     /**
      * Answer
      */
-    public static String[] reorderLogFileAnswer(String[] logs) {
+    public static String[] reorderLogFilesAnswer(String[] logs) {
         List<String> letterList = new ArrayList<>();
         List<String> digitList = new ArrayList<>();
 
