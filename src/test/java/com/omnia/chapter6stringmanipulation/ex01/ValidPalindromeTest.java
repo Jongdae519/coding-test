@@ -1,10 +1,8 @@
 package com.omnia.chapter6stringmanipulation.ex01;
 
+import com.omnia.chapter6stringmanipulation.MeasureTimeUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.time.Duration;
-import java.time.Instant;
 
 class ValidPalindromeTest {
 
@@ -12,28 +10,15 @@ class ValidPalindromeTest {
 
     @Test
     void test() {
-        Instant startTime = Instant.now();
-
-        boolean result = ValidPalindrome.isPalindrome(INPUT);
-
-        Instant endTime = Instant.now();
+        boolean result = MeasureTimeUtils.measureExecutionTime("ValidPalindromeTest#test", () -> ValidPalindrome.isPalindrome(INPUT));
 
         Assertions.assertEquals(result, true);
-
-        System.out.println("ValidPalindromeTest#test: " + Duration.between(startTime, endTime).toNanos() + " ns");
     }
 
     @Test
     void testAnswer() {
-        Instant startTime = Instant.now();
-
-        boolean result = ValidPalindrome.isPalindromeAnswer(INPUT);
-
-        Instant endTime = Instant.now();
+        boolean result = MeasureTimeUtils.measureExecutionTime("ValidPalindromeTest#testAnswer", () -> ValidPalindrome.isPalindromeAnswer(INPUT));
 
         Assertions.assertEquals(result, true);
-
-        System.out.println("ValidPalindromeTest#testAnswer: " + Duration.between(startTime, endTime).toNanos() + " ns");
-
     }
 }
