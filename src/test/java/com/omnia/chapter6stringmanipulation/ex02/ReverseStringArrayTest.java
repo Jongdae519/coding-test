@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 class ReverseStringArrayTest {
 
-    public static final String[] INPUT = {"r", "a", "c", "e", "c", "a", "r"};
+    private static final String[] INPUT = {"r", "a", "c", "e", "c", "a", "r"};
 
     @Test
     void test() {
