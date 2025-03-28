@@ -29,6 +29,20 @@ class ReorderLogFilesTest {
     }
 
     @Test
+    void test_using_list_input_and_output_and_parse() {
+        List<String> reversed = MeasureTimeUtils.measureExecutionTime("ReorderLogFilesTest#test_using_list_input_and_output_and_parse", () -> ReorderLogFiles.reorderLogFilesUsingListAndParse(INPUT_LIST));
+
+        Assertions.assertTrue(reversed.equals(OUTPUT_LIST));
+    }
+
+    @Test
+    void test_using_list_input_and_output_and_factory() {
+        List<String> reversed = MeasureTimeUtils.measureExecutionTime("ReorderLogFilesTest#test_using_list_input_and_output_and_factory", () -> ReorderLogFiles.reorderLogFilesUsingListAndFactory(INPUT_LIST));
+
+        Assertions.assertTrue(reversed.equals(OUTPUT_LIST));
+    }
+
+    @Test
     void testAnswer() {
         String[] reversed = MeasureTimeUtils.measureExecutionTime("ReorderLogFilesTest#testAnswer", () -> ReorderLogFiles.reorderLogFilesAnswer(INPUT));
 

@@ -52,6 +52,23 @@ public class ReorderLogFiles {
         }
     }
 
+    class LogFileFactory {
+        public static LogFile parseLogFile(String log) {
+            String[] parts = log.split(" ", 2);
+            String id = parts[0];
+            String contents = parts[1];
+
+            if (Character.isDigit(contents.charAt(0))) {
+                return new Digit(id, contents);
+            }
+            return new Letter(id, contents);
+        }
+
+        public static List<LogFile> parseLogFileList(List<String> logs) {
+            return logs.stream().map(log -> LogFileFactory.parseLogFile(log)).collect(Collectors.toList());
+        }
+    }
+
     public static String[] reorderLogFiles(String[] logs) {
         List<LogFile> logFileList = Arrays.stream(logs).map(log -> {
             String[] parts = log.split(" ", 2);
@@ -80,6 +97,22 @@ public class ReorderLogFiles {
             }
             return new Letter(id, contents);
         }).collect(Collectors.toList());
+
+        Collections.sort(logFileList);
+
+        return logFileList.stream().map(LogFile::toString).toList();
+    }
+
+    public static List<String> reorderLogFilesUsingListAndParse(List<String> logs) {
+        List<LogFile> logFileList = logs.stream().map(log -> LogFileFactory.parseLogFile(log)).collect(Collectors.toList());
+
+        Collections.sort(logFileList);
+
+        return logFileList.stream().map(LogFile::toString).toList();
+    }
+
+    public static List<String> reorderLogFilesUsingListAndFactory(List<String> logs) {
+        List<LogFile> logFileList = LogFileFactory.parseLogFileList(logs);
 
         Collections.sort(logFileList);
 
