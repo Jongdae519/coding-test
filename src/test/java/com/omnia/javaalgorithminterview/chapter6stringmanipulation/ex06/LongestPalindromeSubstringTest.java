@@ -1,6 +1,6 @@
 package com.omnia.javaalgorithminterview.chapter6stringmanipulation.ex06;
 
-import com.omnia.javaalgorithminterview.chapter6stringmanipulation.MeasureTimeUtils;
+import com.omnia.common.MeasureTimeUtils;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

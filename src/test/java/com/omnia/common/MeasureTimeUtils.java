@@ -1,4 +1,4 @@
-package com.omnia.javaalgorithminterview.chapter6stringmanipulation;
+package com.omnia.common;
 
 import java.time.Duration;
 import java.time.Instant;
