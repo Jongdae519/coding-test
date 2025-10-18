@@ -1,5 +1,6 @@
-package com.omnia.bytbytego.pairsum;
+package com.omnia.bytbytego.twopointers.pairsum;
 
+import com.omnia.bytbytego.pairsum.PairSum;
 import com.omnia.common.MeasureTimeUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

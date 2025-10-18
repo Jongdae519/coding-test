@@ -4,21 +4,22 @@ import java.util.ArrayList;
 
 public class PairSum {
     public static ArrayList<Integer> pairSumSorted(ArrayList<Integer> nums, int target) {
-        // Write your code here
         int left = 0;
         int right = nums.size() - 1;
 
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        ArrayList<Integer> result = new ArrayList<>();
 
         while (left < right) {
-            if (nums.get(left) + nums.get(right) == target) {
+            int sum = nums.get(left) + nums.get(right);
+
+            if (sum < target) {
+                left++;
+            } else if (sum > target) {
+                right--;
+            } else {
                 result.add(left);
                 result.add(right);
                 return result;
-            } else if (nums.get(left) + nums.get(right) < target) {
-                left++;
-            } else {
-                right--;
             }
         }
         return result;
