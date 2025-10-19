@@ -7,7 +7,7 @@ public class PairSum {
         int left = 0;
         int right = nums.size() - 1;
 
-        ArrayList<Integer> result = new ArrayList<>();
+        ArrayList<Integer> pairs = new ArrayList<>();
 
         while (left < right) {
             int sum = nums.get(left) + nums.get(right);
@@ -17,11 +17,11 @@ public class PairSum {
             } else if (sum > target) {
                 right--;
             } else {
-                result.add(left);
-                result.add(right);
-                return result;
+                pairs.add(left);
+                pairs.add(right);
+                return pairs;
             }
         }
-        return result;
+        return pairs;
     }
 }
