@@ -14,7 +14,7 @@ class PairSumTest {
 
     @Test
     void test() {
-        ArrayList<Integer> result = MeasureTimeUtils.measureExecutionTime("PairSum#pair_sum_sorted", () -> PairSum.pairSumSorted(INPUT, 7));
+        ArrayList<Integer> result = MeasureTimeUtils.measureExecutionTime("PairSumTest#test", () -> PairSum.pairSumSorted(INPUT, 7));
 
         Assertions.assertEquals(result, new ArrayList<>(Arrays.asList(2,3)));
     }
