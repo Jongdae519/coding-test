@@ -1,6 +1,5 @@
 package com.omnia.bytbytego.twopointers.shiftzerostotheend;
 
-import com.omnia.bytbytego.twopointers.largestcontainer.LargestContainer;
 import com.omnia.common.MeasureTimeUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ShiftZerosToTheEndTest {
+
     private static Stream<Arguments> testCases() {
         return Stream.of(
                 arguments(new ArrayList<>(List.of()), new ArrayList<>(List.of())),
